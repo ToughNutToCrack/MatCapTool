@@ -4,10 +4,12 @@ using System.IO;
 using System;
 
 public class MatCapWindow : EditorWindow{
-    public string textureName = "MatCapTexture";
-    public static int size = 512;
-
     const int height = 70;
+    public static int size = 512;
+    public string textureName = "MatCapTexture";
+
+    float progress = -1;
+    string progressMsg = "Encoding texture...";
     string basePathTextures = "Assets/Resources/Textures";
     GameObject gameObject;
     Camera cam;
@@ -59,10 +61,18 @@ public class MatCapWindow : EditorWindow{
         if (GUILayout.Button("Save")){
             textureName = string.IsNullOrEmpty(textureName)? DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") : textureName;
             generateTexture();
-        }       
+        }     
+
+        if (progress >=0 && progress < 1)
+            EditorUtility.DisplayProgressBar("Texture", progressMsg, progress);
+        else
+            EditorUtility.ClearProgressBar();  
     }
 
     void generateTexture(){
+        progressMsg = "Encoding texture...";
+        progress = 0;
+
         if(!Directory.Exists(basePathTextures)){
             Directory.CreateDirectory(basePathTextures);
         }
@@ -84,6 +94,10 @@ public class MatCapWindow : EditorWindow{
         Texture2D result = toTexture2D(cam.targetTexture);
         File.WriteAllBytes(path, result.EncodeToPNG());
         UnityEditor.AssetDatabase.Refresh();
+
+        progressMsg = "Done";
+        progress = 1;
+        Debug.Log("Texture generation complete: " + path);
     }
 
     Texture2D toTexture2D(RenderTexture rTex){
