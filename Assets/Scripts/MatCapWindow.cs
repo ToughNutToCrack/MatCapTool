@@ -5,7 +5,7 @@ using System;
 
 public class MatCapWindow : EditorWindow{
     const int height = 70;
-    public static int previewSize = 512;
+    const int previewSize = 512;
     public string textureName = "MatCapTexture";
 
     float progress = -1;
