@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_StandardScatter
-  m_Shader: {fileID: -6465566751694194690, guid: 9775ebd49f3e61e49b79114c064dd12b, type: 3}
+  m_Name: Sphere
+  m_Shader: {fileID: -6465566751694194690, guid: a8149797b4c29e04a99172455e34dd81, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,11 +32,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_50dd5c8281a64101a29ec6327f3de176: 34.69
     - Vector1_745bb618ff934975a139e88bbd80c345: 0
     m_Colors:
-    - Color_7e801e68bab9484fa2d74e729668240e: {r: 0.9716981, g: 0.29980642, b: 0.22459061, a: 0}
-    - Color_de99951a43814b08a0cea438c1849177: {r: 1, g: 1, b: 1, a: 1}
-    - Vector2_841f872a4f3145f681e4fb4abc765d7d: {r: 0, g: 1, b: 0, a: 0}
+    - Color_7e801e68bab9484fa2d74e729668240e: {r: 0.28235295, g: 0.49019608, b: 0.24705882, a: 0}
+    - Color_de99951a43814b08a0cea438c1849177: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_97cbdb2774474f3c95eacc65a5f0336e: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
